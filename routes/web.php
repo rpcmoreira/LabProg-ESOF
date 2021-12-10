@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController;
+use App\Http\Controllers\Controlador;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +14,6 @@ use App\Http\Controllers\TestController;
 |
 */
 
-Route::get('/', [TestController::class, 'index']);
+Route::get('/', [Controlador::class, 'index']);
 
-Route::get('/index', [TestController::class, 'index']);
-
-Route::get('/about', [TestController::class, 'about']);
+Route::get('/about', [Controlador::class, 'about']);
