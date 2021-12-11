@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controlador;
+use App\Http\Controllers\CandidatoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controlador::class, 'index']);
+Route::get('/about', [Controlador::class, 'about']);
+Route::get('/intro', [Controlador::class, 'intro']);
+
+
+Route::get('/candidatos',[CandidatoController::class, 'index']);
+Route::get('/candidatos/create', [CandidatoController::class, 'create']);
+Route::post('/candidatos', [CandidatoController::class, 'store']);
