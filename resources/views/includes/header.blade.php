@@ -9,14 +9,14 @@
             <a href="{{url('/')}}" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
-            <a href="{{url('/pesquisa')}}" class="nav-link">Pesquisar</a>
+            <a href="{{url('/candidato/')}}" class="nav-link">Pesquisar</a>
           </li>
           </ul>
       </div>
       <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a href="{{url('/registar')}}" class="nav-link">Registar</a>
+                <a href="{{url('/candidato/registar')}}" class="nav-link">Registar</a>
             </li>    
             <li class="nav-item">
                 <a href="{{url('/login')}}" class="nav-link">Login</a>
