@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controlador;
+use App\Http\Controllers\CandidatoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,8 @@ use App\Http\Controllers\Controlador;
 */
 
 Route::get('/', [Controlador::class, 'index']);
+Route::get('/teste', [Controlador::class, 'teste']);
 
-Route::get('/about', [Controlador::class, 'about']);
+Route::get('/candidato', [CandidatoController::class, 'index']);
+Route::get('/candidato/registar', [CandidatoController::class, 'create']);
+Route::post('/candidatos', [CandidatoController::class, 'store']);
