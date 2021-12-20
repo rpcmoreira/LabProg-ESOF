@@ -16,10 +16,9 @@ use App\Http\Controllers\CandidatoController;
 */
 
 Route::get('/', [Controlador::class, 'index']);
-Route::get('/about', [Controlador::class, 'about']);
-Route::get('/intro', [Controlador::class, 'intro']);
+Route::get('/teste', [Controlador::class, 'teste']);
 
+Route::get('/candidato', [CandidatoController::class, 'index']);
 
-Route::get('/candidatos',[CandidatoController::class, 'index']);
-Route::get('/candidatos/create', [CandidatoController::class, 'create']);
+Route::get('/candidato/registar', [CandidatoController::class, 'create']);
 Route::post('/candidatos', [CandidatoController::class, 'store']);

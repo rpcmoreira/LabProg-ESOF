@@ -12,10 +12,12 @@ class CandidatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $candidatos= Candidato::all();
-        return view('candidatos.index',['candidatos'->$candidatos]);
+        if(!isset($request['numero'])){$a = 6;}
+        else{ $a = $request['numero'];}
+        $candidatos= Candidato::paginate($a);
+        return view('candidato.index',['candidatos'=>$candidatos]);
     }
 
     /**
@@ -25,7 +27,7 @@ class CandidatoController extends Controller
      */
     public function create()
     {
-        return view('candidatos.create');
+        return view('candidato.create');
     }
 
     /**
@@ -36,11 +38,13 @@ class CandidatoController extends Controller
      */
     public function store(Request $request)
     {
-        $candidato= new Candidato;
-        $candidato->firstName = $request->firstName;
-        $candidato->lastName = $request->lastName;
+        $candidato = new Candidato();
+        $candidato->Nome=$request->Nome;
+        $candidato->Sobrenome=$request->Sobrenome;
+        $candidato->Cargo=$request->Cargo;
+        $candidato->AnosExperiencia=$request->AnosExperiencia;
         $candidato->save();
-        return redirect('candidatos');
+        return redirect('candidato');
     }
 
     /**
