@@ -12,9 +12,11 @@ class CandidatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $candidatos=Candidato::all();
+        if(!isset($request['numero'])){$a = 6;}
+        else{ $a = $request['numero'];}
+        $candidatos= Candidato::paginate($a);
         return view('candidato.index',['candidatos'=>$candidatos]);
     }
 
