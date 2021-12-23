@@ -6,6 +6,8 @@ Teste Page
 
 @section('content')
 <h2 class="mt-5 mb-3 text-center">Teste!</h2>
+<p>És um empregador à procura do teu próximo talento? Ou uma pessoa à procura de um novo desafio para a tua carreira profissional?</p>
+<p>Poderás encontrar tudo isso e mais, aqui só no Eterno Candidato!</p>
 <p>Maecenas faucibus, nunc eget hendrerit ultrices, nisi turpis vehicula sapien, sed pulvinar lacus felis eu felis. Interdum et malesuada fames ac ante ipsum primis in 
     faucibus. Maecenas imperdiet lacus mi, vitae ullamcorper sem sollicitudin vel. Suspendisse nec eros libero. Phasellus nunc tellus, aliquet quis dictum in, lacinia ac 
     leo. Etiam eu malesuada tortor. Morbi porttitor ullamcorper nisi quis lobortis. Mauris pharetra dui id purus varius, at finibus nunc consectetur. Vivamus fermentum 

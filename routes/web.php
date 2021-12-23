@@ -19,5 +19,6 @@ Route::get('/', [Controlador::class, 'index']);
 Route::get('/teste', [Controlador::class, 'teste']);
 
 Route::get('/candidato', [CandidatoController::class, 'index']);
+
 Route::get('/candidato/registar', [CandidatoController::class, 'create']);
 Route::post('/candidatos', [CandidatoController::class, 'store']);
