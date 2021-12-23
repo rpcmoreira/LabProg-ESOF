@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidato;
 use Illuminate\Http\Request;
+use stdClass;
 
 class CandidatoController extends Controller
 {
@@ -14,9 +15,7 @@ class CandidatoController extends Controller
      */
     public function index(Request $request)
     {
-        if(!isset($request['numero'])){$a = 6;}
-        else{ $a = $request['numero'];}
-        $candidatos= Candidato::paginate($a);
+        $candidatos= Candidato::paginate(12);
         return view('candidato.index',['candidatos'=>$candidatos]);
     }
 

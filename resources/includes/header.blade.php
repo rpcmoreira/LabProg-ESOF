@@ -1,7 +1,7 @@
 <nav class="navbar fixed-top navbar-expand-md navbar-light navbar-laravel">
 <a class="navbar-brand"></a>
       <div>
-        <img src="{{url('assets/img/ec.png')}}" width = 50px  height = 50px style = "padding-left = 15px; padding-right = 20px;">
+        <img src="{{url('assets/img/ec.png')}}" width = 50px  height = 50px style = "padding-left= 15px; padding-right= 20px;">
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
