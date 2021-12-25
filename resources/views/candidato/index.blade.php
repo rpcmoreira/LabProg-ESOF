@@ -17,13 +17,17 @@ Candidatos
     </form>
 </div>-->
 
+@if ($message = Session::get('success'))
+<div class="alert alert-success">
+    <p>{{ $message }}</p>
+</div>
+@endif
+
+<div class="table-responsive-md">
 <table class="table">
 <tr>
     <?php
-
-use League\CommonMark\Extension\Table\Table;
-
-for($numcand=0,$numcell=0;$numcand<count($candidatos);$numcand++,$numcell++){  
+        for($numcand=0,$numcell=0;$numcand<count($candidatos);$numcand++,$numcell++){  
             if($numcell==4){
                 echo '</tr><tr>';
                 $numcell = 0;
@@ -40,6 +44,12 @@ for($numcand=0,$numcell=0;$numcand<count($candidatos);$numcand++,$numcell++){
     ?>
 </tr>    
 </table>
+</div>
+
+    @forelse($candidatos as $a)
+    @empty
+    <h3 class="text-center">Não existe Candidatos!</h3>
+    @endforelse
 
 {!! $candidatos->links('pagination::bootstrap-4')!!}
 @endsection

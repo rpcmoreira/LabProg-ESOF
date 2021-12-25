@@ -13,7 +13,7 @@ class CandidatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
         $candidatos= Candidato::paginate(12);
         return view('candidato.index',['candidatos'=>$candidatos]);
@@ -37,13 +37,15 @@ class CandidatoController extends Controller
      */
     public function store(Request $request)
     {
-        $candidato = new Candidato();
-        $candidato->Nome=$request->Nome;
-        $candidato->Sobrenome=$request->Sobrenome;
-        $candidato->Cargo=$request->Cargo;
-        $candidato->AnosExperiencia=$request->AnosExperiencia;
-        $candidato->save();
-        return redirect('candidato');
+        $request->validate(['Nome'=>'required|max:20|min:2',
+                            'Sobrenome'=>'required|max:20|min:2',
+                            'Cargo'=>'required|max:20|min:2',
+                            'AnosExperiencia'=>'required|min:0',
+                            ]);
+
+        Candidato::create($request->all());
+
+        return redirect('candidato')->with('success', 'Candidato criado com successo.');;
     }
 
     /**
@@ -91,3 +93,8 @@ class CandidatoController extends Controller
         //
     }
 }
+?>
+<script type="text/JavaScript">
+    var x = window.innerWidth;
+    document.getElementById("demo").innerHTML = x;
+</script>
