@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Candidato;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use stdClass;
 
 class CandidatoController extends Controller
@@ -44,11 +45,26 @@ class CandidatoController extends Controller
                             'Sexo' => 'required',
 
                             'Email' =>'required',
-                            'Password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
+                            'Password' => 'required',// |min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/
                             'Confirmar_password' => 'required|same:Password',
+
                             ]);
 
-        Candidato::create($request->all());
+        Candidato::create($request->all());                    
+
+        /*$candidato = new Candidato;
+        $candidato->Nome = $request->input('Nome');
+        $candidato->Sobrenome = $request->input('Sobrenome');
+        $candidato->Cargo = $request->input('Cargo');
+        $candidato->AnosExperiencia = $request->input('AnosExperiencia');
+        $candidato->Sexo = $request->input('Sexo');
+        $candidato->Email = $request->input('Email');
+        $candidato->Password = $request->input('Password');*/
+
+        /*$file = Storage::get(asset('/public/img/F2.jpg'));
+        $filename = time().rand(1,10000).'.jpg';
+        Storage::copy('/public/img/F1.jpg', '/storage/app/public/candidatos/'.$filename);
+        $candidato->Imagem=$filename;*/
 
         return redirect('candidato')->with('success', 'Candidato criado com successo.');;
     }

@@ -15,7 +15,7 @@
 
 <body>
     @include('includes.header')
-    <main class="container pb-5 pl-4 pr-4">
+    <main class="container pt-4 pb-5 pl-4 pr-4">
     <div class="container pb-3">
         @yield('content')
     </div>

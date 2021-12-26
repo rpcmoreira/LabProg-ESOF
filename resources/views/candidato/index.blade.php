@@ -34,7 +34,7 @@ Candidatos
             }
             echo '<td>';
                 echo '<table>';
-                echo "<tr><td><img src='img/stock.jpg' alt='logo' height='200' width='200'></td></tr>";
+                echo "<tr><td><img src='img/F1.jpg' alt='logo' height='200' width='200'></td></tr>";
                 echo "<tr><td class='text-center'>";
                 echo $candidatos[$numcand]->Nome." ".$candidatos[$numcand]->Sobrenome."<br>";
                 echo $candidatos[$numcand]->Cargo."<br>";
