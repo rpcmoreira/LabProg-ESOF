@@ -22,3 +22,8 @@ Route::get('/candidato', [CandidatoController::class, 'index']);
 
 Route::get('/candidato/registar', [CandidatoController::class, 'create']);
 Route::post('/candidatos', [CandidatoController::class, 'store']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -14,7 +14,26 @@
         </tr>
         <tr>
             <td>Anos de Experiencia:</td><td><input type="number" name="AnosExperiencia" value="{{old('AnosExperiencia')}}"></td>
-        </tr>  
+        </tr>
+        <tr>
+            <td>Sexo:</td>
+                <td><select name="Sexo">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+                </select>
+            </td>
+
+        </tr> 
+        <tr>
+            <td>Email:</td><td><input type="email" name="Email" value="{{old('Email')}}"></td>
+        </tr>   
+        <tr>
+            <td>Password:</td><td><input type="password" name="Password" value=""></td>
+        </tr> 
+        <tr>
+            <td>Confirmar Password:</td><td><input type="password" name="Confirmar_password" value=""></td>
+        </tr> 
     </table>
     <div style="text-align: center;">
         <br><button type="submit" class="btn btn-primary">Create</button>

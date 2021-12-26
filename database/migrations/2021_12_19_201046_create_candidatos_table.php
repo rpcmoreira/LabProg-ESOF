@@ -19,6 +19,13 @@ class CreateCandidatosTable extends Migration
             $table->string('Sobrenome');
             $table->string('Cargo');
             $table->decimal('AnosExperiencia');
+            $table->string('Sexo');
+            
+            $table->mediumText('Imagem');
+
+            $table->string('Email')->unique();
+            $table->timestamp('Email_verificado')->nullable();
+            $table->string('Password');
             $table->timestamps();
         });
     }

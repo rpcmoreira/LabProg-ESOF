@@ -40,7 +40,12 @@ class CandidatoController extends Controller
         $request->validate(['Nome'=>'required|max:20|min:2',
                             'Sobrenome'=>'required|max:20|min:2',
                             'Cargo'=>'required|max:20|min:2',
-                            'AnosExperiencia'=>'required|min:0',
+                            'AnosExperiencia'=>'required|integer|min:0|max:70',
+                            'Sexo' => 'required',
+
+                            'Email' =>'required',
+                            'Password' => 'required|min:8|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/',
+                            'Confirmar_password' => 'required|same:Password',
                             ]);
 
         Candidato::create($request->all());
