@@ -21,7 +21,7 @@ class CreateCandidatosTable extends Migration
             $table->decimal('AnosExperiencia');
             $table->string('Sexo');
             
-            $table->mediumText('Imagem');
+            $table->mediumText('Imagem')->nullable();
 
             $table->string('Email')->unique();
             $table->timestamp('Email_verificado')->nullable();
