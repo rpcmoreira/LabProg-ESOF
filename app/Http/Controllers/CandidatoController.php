@@ -50,21 +50,25 @@ class CandidatoController extends Controller
 
                             ]);
 
-        Candidato::create($request->all());                    
+        //Candidato::create($request->all());                    
 
-        /*$candidato = new Candidato;
+        $candidato = new Candidato;
         $candidato->Nome = $request->input('Nome');
         $candidato->Sobrenome = $request->input('Sobrenome');
         $candidato->Cargo = $request->input('Cargo');
         $candidato->AnosExperiencia = $request->input('AnosExperiencia');
         $candidato->Sexo = $request->input('Sexo');
         $candidato->Email = $request->input('Email');
-        $candidato->Password = $request->input('Password');*/
+        $candidato->Password = $request->input('Password');
+        $candidato->Default = $request->input('Default');
 
-        /*$file = Storage::get(asset('/public/img/F2.jpg'));
-        $filename = time().rand(1,10000).'.jpg';
-        Storage::copy('/public/img/F1.jpg', '/storage/app/public/candidatos/'.$filename);
-        $candidato->Imagem=$filename;*/
+        $rand=rand(1,3);
+        switch($request->input('Sexo')){
+            case 'Feminino':  $candidato->Imagem = 'F'.$rand.'.jpg'; break;
+            case 'Masculino': $candidato->Imagem = 'M'.$rand.'.jpg'; break;
+            case 'Outro':     $candidato->Imagem = 'A'.$rand.'.jpg'; break; 
+        }
+        $candidato->save();
 
         return redirect('candidato')->with('success', 'Candidato criado com successo.');;
     }
